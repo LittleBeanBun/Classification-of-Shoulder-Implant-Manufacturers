@@ -70,3 +70,68 @@ Use this bibtex if you enjoyed this repository and you want to cite it:
   volume={11}
 }
 ```
+# <p>轻量级肩关节植入物z制造商分类模型：融合NCP 和高效胶囊网络 </p> <p> Shoulder implant Manufacturers classification model: Ensembling NCP and Efficient-Capsule Networks</p>
+
+
+在该项目中，我们将高效胶囊网络与NCP神经网络结合，对模型进行轻量化同时引入类不平衡损失函数来改善模型性能，成功开发了一种低成本、高精度的肩关节植入物分类算法。具体来说，我们将高效胶囊网络的解码器部分参数由144万优化至57万，同时将模型分类精度提升至约85%左右。该算法具有在医疗设备领域广泛应用的潜力。且该算法的通用性使得它可以被应用于其他领域或问题，如医疗影像识别和产品质量检测等。
+
+
+# 项目背景
+
+![image](https://github.com/LittleBeanBun/Classification-of-Shoulder-Implant-Manufacturers/assets/152876743/af1f718d-5214-4ca2-a004-9dce8b9ed4eb)
+![image](https://github.com/LittleBeanBun/Classification-of-Shoulder-Implant-Manufacturers/assets/152876743/3e3544d1-8e92-4cf1-955f-17cad02dc497)
+
+# 数据集
+下载地址：https://download.csdn.net/download/m0_70420861/88873763?spm=1001.2014.3001.5501
+## 胶囊网络
+胶囊网络具有诸多良好优点，其中最重要的，契合与医学图像分割的便是其向量的表示，可以很好的建模局部-整体关系。同时由于这种向量的表达，使得胶囊网络仅需在训练过程中找到合适的胶囊从而生成有用的预测即可，而不是像卷积神经网络那样去“记住”目标的特征形式。这也是为什么胶囊网络更适合训练较少的数据，当数据集过大反而性能下降的原因。
+
+![image](https://github.com/LittleBeanBun/Classification-of-Shoulder-Implant-Manufacturers/assets/152876743/dfd79516-8f66-4906-8ef5-fb47706d1f0b)
+
+
+
+![image](https://github.com/LittleBeanBun/Classification-of-Shoulder-Implant-Manufacturers/assets/152876743/12c677de-21c4-49a2-ab10-05e2ea16558d)
+
+![image](https://github.com/LittleBeanBun/Classification-of-Shoulder-Implant-Manufacturers/assets/152876743/f5d9304b-8316-4d6b-98a5-9d3423426bed)
+
+
+<h4>高效胶囊网络</h4>
+
+![image](https://github.com/LittleBeanBun/Classification-of-Shoulder-Implant-Manufacturers/assets/152876743/1b688b99-ed34-4f79-a75c-f2c56207af19)
+
+
+## NCP
+
+
+
+![image](https://github.com/LittleBeanBun/Classification-of-Shoulder-Implant-Manufacturers/assets/152876743/54f3500e-ea42-4049-b005-f8b50fad5f3b)
+<p><img src="https://img-blog.csdnimg.cn/img_convert/2af8ee170acbbf916563549c582d140e.png" alt=""></p>
+
+![image](https://github.com/LittleBeanBun/Classification-of-Shoulder-Implant-Manufacturers/assets/152876743/013a0b4b-19c6-4ccb-bfac-d72215c430ed)
+
+![image](https://github.com/LittleBeanBun/Classification-of-Shoulder-Implant-Manufacturers/assets/152876743/929d6764-7649-4d3a-9104-4a7153cc8390)
+![image](https://github.com/LittleBeanBun/Classification-of-Shoulder-Implant-Manufacturers/assets/152876743/3c184f62-c028-45a5-856e-d2de3a26207e)
+![image](https://github.com/LittleBeanBun/Classification-of-Shoulder-Implant-Manufacturers/assets/152876743/6dfe9f50-afe8-4d40-b007-a0e7a55d9be4)
+## 实验
+![image](https://github.com/LittleBeanBun/Classification-of-Shoulder-Implant-Manufacturers/assets/152876743/d9b0ee2e-e460-4c91-98fb-6fa9d26461ec)
+![image](https://github.com/LittleBeanBun/Classification-of-Shoulder-Implant-Manufacturers/assets/152876743/1289a020-062e-4569-b9fe-96f1f30e1a56)
+
+
+
+![image](https://github.com/LittleBeanBun/Classification-of-Shoulder-Implant-Manufacturers/assets/152876743/88f5815a-ce68-41dc-928e-e9bff15a3b28)
+
+
+
+
+## 类平衡损失函数
+![image](https://github.com/LittleBeanBun/Classification-of-Shoulder-Implant-Manufacturers/assets/152876743/e1de4532-1db5-4f3a-ab22-9e5c6f7506f1)
+
+
+## 可视化
+![image](https://github.com/LittleBeanBun/Classification-of-Shoulder-Implant-Manufacturers/assets/152876743/dfea685d-e61a-4509-a6eb-9db714dfc849)
+
+# 项目总结
+![image](https://github.com/LittleBeanBun/Classification-of-Shoulder-Implant-Manufacturers/assets/152876743/2bc1ec8d-410b-407b-b135-18b53605c15e)
+
+
+提出了一种新的肩关节植入物分类方法，实现了高效准确的分类的目标。将所提出的算法与经典卷积神经网络模型和其他文献中最优算法进行比较，不仅在分类精度上得到了很大的提升，且大大减少了参数量和模型训练时间。高效精确的分类可以帮助外科医生快速确定植入物制造商，缩短治疗进程。相对于其他相关文献中的方法，本文提出的方法准确率和计算成本都取得了更好的表现。由于数据集太小，获得的准确的预测结果需要人工增加数据集才能实现，当人工增加的图片过多，远多于原始图片时，预测效果反而不好，所以扩增真实数据集是未来迫切需要完成的工作。此外，在线分类功能对迫切需要进行手术时提供了更加方便快捷的方式，未来可以注重在线分类系统的搭建。
